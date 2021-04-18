@@ -1,0 +1,17 @@
+<div>
+  <ngb-carousel *ngIf="videos"
+                [interval]="200000"
+                [showNavigationArrows]="true"
+                [showNavigationIndicators]="false">
+    <ng-template *ngFor="let video of videos" ngbSlide>
+      <div class="video-wrapper">
+        <img [src]='video.image'/>
+        <div class="middle-part">
+          <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="play(video.link)">play_arrow</mat-icon>
+          <h4 class="bold font-gold">{{video.title}}</h4>
+          <p class="">{{video.description}}</p>
+        </div>
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>

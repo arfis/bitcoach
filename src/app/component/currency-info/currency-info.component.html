@@ -1,0 +1,6 @@
+<div class="currencies-wrapper">
+  <div *ngFor="let currency of currencies$ | async" class="currency">
+    {{currency.symbol}}:
+    <span class="value bold" [class.negative]="currency.price_change_24h < 0">{{currency.current_price | currency}}</span>
+  </div>
+</div>

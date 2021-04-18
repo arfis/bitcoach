@@ -1,0 +1,19 @@
+@import '../../../assets/lib/colors';
+
+.currencies-wrapper {
+  display: flex;
+}
+
+.currency {
+  text-transform: uppercase;
+  color: $color-blue;
+  padding: 5px 10px;
+}
+
+.value {
+  color: $color-green;
+
+  &.negative {
+    color: $color-red;
+  }
+}

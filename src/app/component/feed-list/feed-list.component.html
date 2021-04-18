@@ -1,0 +1,11 @@
+<div class="feed-wrapper">
+  <div class="items">
+    <div class="item" *ngFor="let item of items">
+      <img [class.autoWidth]="autoWidth" [src]="item.image">
+      <a [href]="item.link">{{item.title}}</a>
+      <p>{{item.description}}</p>
+      <button class="bc-btn empty" (click)="navigate(item.link)">detail</button>
+    </div>
+  </div>
+  <button class="bc-btn full" (click)="navigate(allItemsUrl)">Vsetky polozky</button>
+</div>

@@ -1,0 +1,46 @@
+@import '../../../assets/lib/colors';
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height:100%;
+  background: $color-blue;
+
+  h5 {
+    text-transform: uppercase;
+  }
+
+  p {
+    color: white;
+  }
+
+  img {
+    //width: 100%;
+    height: 100%;
+    opacity: .75;
+  }
+}
+
+.middle-part {
+  position: absolute;
+  display: flex;
+  width: 75%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  mat-icon {
+    color: $color-light-gray;
+    opacity: .6;
+    font-size: 90px;
+    width: 90px;
+    height: 90px;
+
+    &:hover {
+      cursor: pointer;
+      opacity: 1;
+    }
+  }
+}

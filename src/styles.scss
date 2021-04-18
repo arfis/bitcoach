@@ -1,1 +1,59 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import '~bootstrap/scss/bootstrap';
+@import './assets/lib/colors';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.font-gold {
+  color: $color-gold;
+}
+
+.font-blue {
+  color: $color-blue;
+}
+
+.sub-title {
+  font-family: "Noto Sans Old Italic";
+}
+
+h1, .bold {
+  font-family: "Arial Rounded MT Bold";
+}
+
+.bc-btn {
+  width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  padding: 8px;
+
+  &.empty {
+    border: 1px solid $color-blue;
+    color: $color-blue;
+
+    &:hover {
+      color: $color-gold;
+      border: 1px solid $color-gold;
+    }
+  }
+
+  &.full {
+    border: 1px solid $color-blue;
+    color: white;
+    background: $color-blue;
+
+    &:hover {
+      border: 1px solid $color-gold;
+      background: $color-gold;
+    }
+  }
+}
+
+.divider {
+  border-top: .7px solid $color-blue;
+  display: block;
+  width: 100%;
+}

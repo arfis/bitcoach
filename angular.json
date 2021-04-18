@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/bitcoach-onepager",
+            "outputPath": "dist/bitcoach-onepager/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,9 +28,11 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -61,7 +63,9 @@
                   "maximumWarning": "2kb",
                   "maximumError": "4kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "ngsw-config.json"
             }
           }
         },
@@ -91,9 +95,11 @@
             "karmaConfig": "karma.conf.js",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/manifest.webmanifest"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -105,7 +111,8 @@
             "tsConfig": [
               "tsconfig.app.json",
               "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "e2e/tsconfig.json",
+              "tsconfig.server.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -122,6 +129,53 @@
             "production": {
               "devServerTarget": "bitcoach-onepager:serve:production"
             }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/bitcoach-onepager/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "bitcoach-onepager:build",
+            "serverTarget": "bitcoach-onepager:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "bitcoach-onepager:build:production",
+              "serverTarget": "bitcoach-onepager:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "bitcoach-onepager:build:production",
+            "serverTarget": "bitcoach-onepager:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
           }
         }
       }
