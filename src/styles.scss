@@ -3,8 +3,47 @@
 @import '~bootstrap/scss/bootstrap';
 @import './assets/lib/colors';
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import 'assets/fonts/_font.scss';
+// primary font
+$primary_font: 'Montserrat';
+$headline_font: 'Roboto';
+$thin:100;
+$light:300;
+$regular:400;
+$bold:700;
+$black:900;
+
+// Font size
+$font-xs:12px;
+$font-sm: 14px;
+$primary-fs: 16px;
+$font-md: 18px;
+$font-lg: 20px;
+
+html, body {
+  height: 100%;
+  background-color: $color-background !important;
+  font-size: $primary-fs !important;
+  font-weight: $regular !important;
+}
+
+body {
+  margin: 0;
+  background-color: $color-background !important;
+
+  h1,h2,h3,h4,h5 {
+    font-family: $headline_font !important;
+    font-weight: $black !important;
+  }
+
+  h1 {
+    text-transform: uppercase !important;
+  }
+}
+
+p, a, div {
+  font-family: $primary_font;
+}
 
 .font-gold {
   color: $color-gold;
@@ -14,12 +53,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   color: $color-blue;
 }
 
-.sub-title {
-  font-family: "Noto Sans Old Italic";
+.font-white {
+  color: white;
 }
 
-h1, .bold {
-  font-family: "Arial Rounded MT Bold";
+h1.title {
+  font-size: 32px !important;
+  margin: 50px 0;
+}
+
+.title-with-subtitle {
+  font-size: 32px !important;
+  margin-bottom: 15px;
+  margin-top: 50px;
+
+  > .sub-title {
+    margin-bottom: 50px !important;
+  }
+}
+
+.sub-title {
+  font-family: $primary_font !important;
+  font-weight: $light !important;
+  font-style: italic !important;
+}
+
+.bold {
+  font-family: $primary_font !important;
+  font-weight: $bold !important;
 }
 
 .bc-btn {

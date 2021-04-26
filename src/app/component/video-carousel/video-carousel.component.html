@@ -1,17 +1,49 @@
-<div>
-  <ngb-carousel *ngIf="videos"
-                [interval]="200000"
-                [showNavigationArrows]="true"
-                [showNavigationIndicators]="false">
-    <ng-template *ngFor="let video of videos" ngbSlide>
-      <div class="video-wrapper">
-        <img [src]='video.image'/>
-        <div class="middle-part">
-          <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="play(video.link)">play_arrow</mat-icon>
-          <h4 class="bold font-gold">{{video.title}}</h4>
-          <p class="">{{video.description}}</p>
+<div class="content-wrapper">
+  <ng-container *ngIf="!videoUrl; else playVideo">
+    <ngb-carousel *ngIf="videos"
+                  (slide)="onSlide($event)"
+                  [interval]="200000"
+                  [showNavigationArrows]="true"
+                  [showNavigationIndicators]="false">
+      <ng-template ngbSlide *ngFor="let video of videos" id="{{video.id}}">
+        <div class="video-wrapper">
+          <div class="img-wrapper">
+            <img [src]='video.image'/>
+          </div>
+          <div class="middle-part">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="play(video.id)">play_arrow</mat-icon>
+            <h1 class="bold font-gold">{{video.title}}</h1>
+            <p class="sub-title">{{video.description | slice:0:220}}...</p>
+          </div>
+        </div>
+      </ng-template>
+    </ngb-carousel>
+  </ng-container>
+  <div class="video-list-wrapper">
+    <div class="navigation">
+      <mat-icon *ngIf="canGoPrevious" (click)="previous()">chevron_left</mat-icon>
+    </div>
+    <div class="video-list-holder">
+      <div class="video-list"
+           [style.right.px]="rightPosition"
+           [style.width.px]="visibleVideoCount * videoWidth">
+        <div *ngFor="let video of videos" class="holder"
+             [class.active]="activeId === video.id"
+             (click)="listPlay(video)">
+          <img [src]="video.image">
         </div>
       </div>
-    </ng-template>
-  </ngb-carousel>
+    </div>
+    <div class="navigation">
+      <mat-icon *ngIf="canGoNext" (click)="next()">chevron_right</mat-icon>
+    </div>
+  </div>
 </div>
+
+<ng-template #playVideo>
+  <iframe id="ytplayer" type="text/html" width="640" height="360"
+          [src]="videoUrl"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+          frameborder="0"></iframe>
+</ng-template>

@@ -2,12 +2,16 @@
 
 .currencies-wrapper {
   display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  overflow: auto;
 }
 
 .currency {
   text-transform: uppercase;
   color: $color-blue;
   padding: 5px 10px;
+  display: inherit;
 }
 
 .value {

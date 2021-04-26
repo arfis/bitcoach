@@ -1,10 +1,12 @@
+@import '../../../assets/lib/colors';
+
 ngb-carousel .wrapper {
   position: relative;
   height: 0;
   padding-top: 55%; /* Keep ratio for 900x500 images */
 }
 
-ngb-carousel .wrapper>img {
+ngb-carousel .wrapper > img {
   position: absolute;
   top: 0;
   left: 0;
@@ -13,11 +15,52 @@ ngb-carousel .wrapper>img {
   width: 100%;
 }
 
+.text {
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  left: 10%;
+  transition: all 3s;
+  height: 45%;
+
+  .progresive {
+
+  }
+
+  .move {
+    transition: all 3s;
+    position: absolute;
+
+    &.czech {
+      top: 25%;
+      left: 7%;
+    }
+
+    &.crypto {
+      left: 25%;
+      top: 30%;
+      height: 33%;
+    }
+
+    &.comunity {
+      left: 64%;
+      top: 42%;
+    }
+  }
+
+
+}
+
 ::ng-deep {
-  .carousel-indicators li {
-    width: 10px;
-    height: 10px;
-    border-radius: 50px;
-    border: none;
+  .carousel-indicators {
+    bottom: 10%;
+
+    li {
+      width: 10px;
+      height: 10px;
+      border-radius: 50px;
+      border: none;
+      background: none;
+    }
   }
 }

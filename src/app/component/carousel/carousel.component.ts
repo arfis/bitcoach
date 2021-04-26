@@ -8,7 +8,7 @@ import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 })
 export class CarouselComponent {
 
-  @Input() images = [700, 800, 807].map((n) => `https://picsum.photos/id/${n}/900/500`);
+  @Input() images = ['assets/image/carousel_1.png'];
 
   constructor(config: NgbCarouselConfig) {
     config.interval = 2000;

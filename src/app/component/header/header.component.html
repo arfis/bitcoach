@@ -2,11 +2,31 @@
   <img src="assets/image/bitcoach-logo.svg"/>
 
   <div class="items">
-    <a>INFO</a>
-    <a>NEWS</a>
-    <a>BLOG</a>
-    <a>CONTACT</a>
+    <a (click)="navigateSection(SectionType.INTRO)">{{'HEADER.INFO' | translate}}</a>
+    <a (click)="navigateSection(SectionType.VIDEO)">{{'HEADER.VIDEO' | translate}}</a>
+    <a (click)="navigateSection(SectionType.BLOG)">{{'HEADER.BLOG' | translate}}</a>
+    <a (click)="navigateSection(SectionType.PARTNERS)">{{'HEADER.PARTNERS' | translate}}</a>
   </div>
 
-  <a class="lang-selector">SK/EN</a>
+  <div>
+
+    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Item 1</button>
+      <button mat-menu-item>Item 2</button>
+    </mat-menu>
+
+<!--    <button class="lang-selector" mat-button [matMenuTriggerFor]="menu">SK/EN</button>-->
+<!--    <mat-menu #menu="matMenu">-->
+<!--      <button mat-menu-item (click)="changeLang('sk')">SK</button>-->
+<!--      <button mat-menu-item (click)="changeLang('en')">EN</button>-->
+<!--    </mat-menu>-->
+
+<!--    <a class="lang-selector">SK/EN</a>-->
+
+<!--    <mat-list role="list">-->
+<!--      <mat-list-item (click)="changeLang('sk')" role="listitem">SK</mat-list-item>-->
+<!--      <mat-list-item (click)="changeLang('en')" role="listitem">EN</mat-list-item>-->
+<!--    </mat-list>-->
+  </div>
 </div>

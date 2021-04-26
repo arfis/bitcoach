@@ -2,7 +2,7 @@
   <div class="items">
     <div class="item" *ngFor="let item of items">
       <img [class.autoWidth]="autoWidth" [src]="item.image">
-      <a [href]="item.link">{{item.title}}</a>
+      <h2 class="font-blue bold"><a [href]="item.link">{{item.title}}</a></h2>
       <p>{{item.description}}</p>
       <button class="bc-btn empty" (click)="navigate(item.link)">detail</button>
     </div>

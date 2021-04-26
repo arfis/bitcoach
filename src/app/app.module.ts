@@ -13,9 +13,14 @@ import { VideoCarouselComponent } from './component/video-carousel/video-carouse
 import {MatIconModule} from '@angular/material/icon';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { FeedListComponent } from './component/feed-list/feed-list.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { HeaderComponent } from './component/header/header.component';
 import { CurrencyInfoComponent } from './component/currency-info/currency-info.component';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import { MatListModule } from '@angular/material/list';
+import { RouterModule } from '@angular/router';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -28,6 +33,15 @@ import { CurrencyInfoComponent } from './component/currency-info/currency-info.c
     CurrencyInfoComponent
   ],
   imports: [
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
+    RouterModule.forRoot([], {anchorScrolling: 'enabled'}),
     FontAwesomeModule,
     NgbCarouselModule,
     HttpClientModule,
@@ -41,10 +55,16 @@ import { CurrencyInfoComponent } from './component/currency-info/currency-info.c
     }),
     BrowserAnimationsModule,
     NgbModule,
-    MatIconModule
+    MatIconModule,
+    MatListModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {
+}
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

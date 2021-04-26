@@ -1,7 +1,23 @@
 @import '../../../../assets/lib/colors.scss';
 
 section {
-  padding: 20px 0;
+  padding: 35px 0;
+
+  .main-title {
+    text-align: center;
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 45px;
+    }
+  }
+
+  .main-title, .about > div {
+    @media only screen and (min-width: 1000px) {
+      margin-bottom: 70px;
+    }
+  }
+
   &.base {
     padding: 20px 40px;
     display: flex;
@@ -16,6 +32,12 @@ section {
       width: 100%;
     }
 
+    .separator {
+      width: 210px;
+      height: 100%;
+      display: block;
+    }
+
     @media only screen and (max-width: 600px) {
       .primary, .secondary {
         display: flex;
@@ -28,10 +50,17 @@ section {
       }
     }
 
+    @media only screen and (max-width: 1500px) {
+      .separator {
+        display: none;
+      }
+    }
+
     .content {
       display: flex;
       flex-direction: row;
       flex-wrap: wrap;
+      text-align: justify;
 
       @media only screen and (max-width: 600px) {
         display: block;
@@ -47,12 +76,42 @@ section {
       }
 
       .social {
-        flex: 2;
+        flex: 5;
         display: flex;
         flex-direction: column;
 
+        .header {
+          h1 {
+            margin-bottom: 0;
+          }
+        }
+
         .primary, .secondary {
           display: flex;
+        }
+
+        .primary {
+          margin: 50px;
+          justify-content: space-between;
+          align-items: center;
+
+          .icon {
+            display: block;
+            width: 80px;
+            height: 100px;
+            margin: 0 60px;
+
+            fa-icon {
+              display: block;
+              width: 70px;
+              height: 80px;
+              font-size: 80px;
+            }
+          }
+        }
+
+        .secondary {
+          justify-content: space-between;
         }
 
         .icon {
@@ -79,7 +138,7 @@ section {
 }
 
 .footer-part {
-  background: linear-gradient(white, $color-gold);
+  background: linear-gradient($color-background, $color-gold);
   padding: 0 20px;
 
   .sub-section {
@@ -87,7 +146,11 @@ section {
     //justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 20px 0;
+    margin: 40px 0;
+
+    .title {
+      height: 40px;
+    }
   }
 
   .list {
@@ -95,10 +158,12 @@ section {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    margin: 15px 0;
+    flex-wrap: wrap;
 
     img {
-      width: 100px;
-      margin: 10px;
+      width: 80px;
+      margin: 20px;
 
       &.autoWidth {
         width: 100%;
@@ -115,6 +180,11 @@ section {
     display: flex;
     margin: 10px 0;
 
+    .address {
+      border: .4px solid $color-blue;
+      padding: 2px;
+    }
+
     .content {
       background: $color-gold;
       position: absolute;
@@ -126,7 +196,55 @@ section {
         margin-left: 15px;
         display: inline-block;
         padding: 0;
+        color: $color-gold;
       }
     }
   }
+}
+
+.about {
+  line-height: 32px;
+
+  .vertical-separator {
+    display: block;
+    height: 50px;
+  }
+
+  .left-allignment {
+    text-align: left;
+  }
+}
+
+.icon-telegram {
+  content: url('../../../../assets/image/icon/telegram-blue.png');
+  cursor: pointer;
+
+  &:hover {
+    content: url('../../../../assets/image/icon/telegram-gold.png');
+  }
+}
+
+.icon-discord {
+  content: url('../../../../assets/image/icon/discord-blue.png');
+  cursor: pointer;
+
+  &:hover {
+    content: url('../../../../assets/image/icon/discord-gold.png');
+  }
+}
+
+h1, h3, h4, h5 {
+  text-align: center;
+}
+
+.feed h1 {
+  margin: 25px;
+}
+
+.video {
+  background-color: $color-blue;
+}
+
+.sub-title {
+  margin-bottom: 35px;
 }

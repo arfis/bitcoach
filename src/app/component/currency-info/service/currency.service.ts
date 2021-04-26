@@ -15,7 +15,7 @@ export class CurrencyService {
 
     // Begin assigning parameters
     params = params.append('vs_currency', 'usd');
-    params = params.append('ids', ['chainlink', 'ethereum', 'bitcoin'].join(','));
+    params = params.append('ids', ['chainlink', 'ethereum', 'bitcoin', 'xrp', 'binance-coin', 'cardano', 'polkadot', 'litecoin', 'uniswap', 'tron'].join(','));
     params = params.append('order', 'market_cap_desc');
     params = params.append('per_page', '100');
     params = params.append('page', '1');

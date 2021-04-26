@@ -1,7 +1,7 @@
 @import '../../../assets/lib/colors';
 
 .header-wrapper {
-  background: $color-blue;
+  background: $color-blue-transparent;
   color: white;
   display: flex;
   align-items: center;
@@ -24,6 +24,22 @@
 
     &.lang-selector {
       margin-right: 40px;
+    }
+  }
+
+  mat-list {
+    display: none;
+
+    &:hover {
+      color: $color-gold;
+    }
+  }
+
+  .lang-selector {
+    &:hover {
+      mat-list {
+        display: block;
+      }
     }
   }
 

@@ -5,6 +5,12 @@
                 [showNavigationIndicators]="true">>
     <ng-template *ngFor="let image of images" ngbSlide>
       <div class="wrapper">
+        <div class="text">
+          <img class="progresive" src="../../../assets/image/header/progressive.png">
+          <img class="move czech" src="../../../assets/image/header/czech.png">
+          <img class="move crypto" src="../../../assets/image/header/crypto.png">
+          <img class="move comunity" src="../../../assets/image/header/community.png">
+        </div>
         <img [src]="image" alt="Random first slide">
       </div>
       <div class="carousel-caption">

@@ -4,6 +4,9 @@ import {MediumService} from '../../../service/medium.service';
 import {Observable} from 'rxjs';
 import {YoutubeService} from '../../../service/youtube.service';
 import {map, shareReplay} from 'rxjs/operators';
+import {ViewportScroller} from '@angular/common';
+import {SectionType} from './page-sections.enum';
+import {PageSectionService} from '../../../service/page-section.service';
 
 @Component({
   selector: 'app-intro-page',
@@ -26,24 +29,31 @@ export class IntroPageComponent implements OnInit {
   ];
 
   contributors = [
-    'assets/image/uniswap-io-vector-logo.png',
-    'assets/image/uniswap-io-vector-logo.png',
-    'assets/image/uniswap-io-vector-logo.png',
-    'assets/image/uniswap-io-vector-logo.png'
+    'assets/image/contributors/crypto_kylin.png',
+    'assets/image/contributors/uniswap.png',
+    'assets/image/contributors/avax.png',
+    'assets/image/contributors/bsc.png'
   ];
   partners = [
-    'assets/image/uniswap-io-vector-logo.png'
+    'assets/image/partners/dao_maker.png'
   ];
   mediumItems$: Observable<any>;
   youtubeItems$: Observable<any>;
+  SectionType = SectionType;
 
   constructor(private mediumService: MediumService,
-              private youtubeService: YoutubeService) {
+              private youtubeService: YoutubeService,
+              private viewportScroller: ViewportScroller,
+              private pageSectionService: PageSectionService) {
     this.mediumItems$ = this.mediumService.getItems();
     this.youtubeItems$ = this.youtubeService.getItems().pipe(shareReplay());
   }
 
   ngOnInit(): void {
+    this.pageSectionService.sectionChange$.subscribe(this.focusSection);
   }
 
+  public focusSection(elementId: string): void {
+    this.viewportScroller.scrollToAnchor(elementId);
+  }
 }

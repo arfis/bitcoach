@@ -1,36 +1,31 @@
-<section class="base">
-  <div class="header">
-    <h1>
-      <span class="font-blue">Ananas blabla mango </span>
-      <span class="font-gold"> tekvica domaca</span> pazitka.
-    </h1>
-    <h4 class="sub-title">
-      Blablablablabla
-    </h4>
+<section [id]="SectionType.INTRO" class="base">
+  <div class="font-blue bold main-title">
+    <h1 [innerHTML]="'INTRO.ABOUT_US.MAIN_TITLE' | translate"></h1>
+    <h3 class="sub-title">{{'INTRO.ABOUT_US.SUB_TITLE' | translate}}</h3>
   </div>
 
   <div class="content">
     <div class="info">
       <div class="about">
-        Nunc lobortis, nisl a iaculis dictum, eros magna vehicula velit, eget vehicula tortor ex molestie mi. Class
-        aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Maecenas rhoncus ac dui et
-        volutpat. Integer sit amet risus libero. Proin ipsum turpis, consectetur sit amet ultricies non, ullamcorper non
-        nunc. Nunc a arcu metus. Integer eleifend mauris diam. Praesent vitae faucibus magna, vel ultrices justo. Sed ac
-        massa in mi pulvinar dictum. Nulla consectetur, est euismod efficitur fringilla, odio velit interdum libero,
-        vitae venenatis magna arcu eget neque.
-      </div>
-
-      <div class="extra">
-        Etiam et orci vehicula, luctus lorem sed, accumsan sem. Morbi rhoncus condimentum libero nec pellentesque.
-        Aliquam pharetra tortor nec lorem imperdiet, sed.
+        <div [innerHTML]="'INTRO.ABOUT_US.CORE' | translate"></div>
+        <div class="left-allignment" [innerHTML]="'INTRO.ABOUT_US.END' | translate"></div>
+        <div class="vertical-separator"></div>
       </div>
     </div>
 
+    <div class="separator"></div>
+
     <div class="social">
-      <h3 class="font-blue">JOIN US:</h3>
+      <div class="header">
+        <h1 class="font-blue">{{'INTRO.ABOUT_US.JOIN_US' | translate}}</h1>
+      </div>
       <div class="primary">
-        <a *ngFor="let social of mainSocial" class="icon" [href]="social.link">
-          <fa-icon [icon]="social.icon"></fa-icon>
+        <a class="icon-telegram" [href]="''">
+
+        </a>
+
+        <a class="icon-discord" [href]="''">
+
         </a>
       </div>
 
@@ -43,41 +38,46 @@
   </div>
 </section>
 
-<section class="video">
+<section [id]="SectionType.VIDEO" class="video">
+  <h1 class="title font-white" [innerHTML]="'VIDEO.TITLE' | translate"></h1>
   <app-video-carousel [videos]="youtubeItems$ | async"></app-video-carousel>
 </section>
 
-<section class="feed">
-  <app-feed-list [allItemsUrl]="'https://www.youtube.com/channel/UCPjDQhKVe2YtPUI3PiWN82A'"
-                 [autoWidth]="true"
-                 [items]="youtubeItems$ | async"></app-feed-list>
-</section>
+<!--<section class="feed">-->
+<!--  <app-feed-list [allItemsUrl]="'https://www.youtube.com/channel/UCPjDQhKVe2YtPUI3PiWN82A'"-->
+<!--                 [autoWidth]="true"-->
+<!--                 [items]="youtubeItems$ | async"></app-feed-list>-->
+<!--</section>-->
 
-<section class="feed">
+<section [id]="SectionType.BLOG" class="feed">
+  <h1 [innerHTML]="'BLOG.TITLE' | translate" class="title-with-subtitle font-blue"></h1>
+  <h3 class="sub-title">{{'BLOG.AUTHOR' | translate}}</h3>
   <app-feed-list [allItemsUrl]="'http://medium.com/bitcoach'"
                  [items]="mediumItems$ | async"></app-feed-list>
 </section>
 
-<section class="footer-part">
+<section [id]="SectionType.PARTNERS" class="footer-part">
+  <h1 [innerHTML]="'BLOG.TITLE' | translate" class="title font-blue"></h1>
+
   <div class="sub-section">
-    <h3>Early Contributors</h3>
+    <img class="title" src='assets/image/partners/partners.png'>
+    <div class="list">
+      <img *ngFor="let partner of partners" [src]="partner"/>
+    </div>
+  </div>
+
+  <div class="sub-section">
+    <img class="title" src='assets/image/contributors/contributors.png'>
     <div class="list">
       <img *ngFor="let contributor of contributors" [src]="contributor"/>
     </div>
   </div>
 
-  <div class="sub-section">
-    <h3>Partners</h3>
-    <div class="list">
-      <img *ngFor="let contributor of contributors" [src]="contributor"/>
-    </div>
-  </div>
-
-  <div class="sub-section">
-    <div class="divider"></div>
-    <h4>Podporujeme cez krypto mnozstvo veci. Napr pohyb a vzdelavannie.</h4>
-    <div class="divider"></div>
-  </div>
+<!--  <div class="sub-section">-->
+<!--    <div class="divider"></div>-->
+<!--    <h4>Podporujeme cez krypto mnozstvo veci. Napr pohyb a vzdelavannie.</h4>-->
+<!--    <div class="divider"></div>-->
+<!--  </div>-->
 
   <div class="support">
     <div class="content">

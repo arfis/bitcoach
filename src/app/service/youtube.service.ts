@@ -15,9 +15,10 @@ export class YoutubeService {
 
   getItems(): Observable<any> {
     return this.httpClient.get<any>(this.POSTS_URL).pipe(map(({items}) => (items as any[]).map(item => ({
+      id: item.snippet.resourceId.videoId,
       title: item.snippet.title,
       description: item.snippet.description,
-      image: item.snippet.thumbnails.high.url,
+      image: item.snippet.thumbnails.standard.url,
       link: `http://youtube.com/${item.id.videoId}`
     }))));
   }

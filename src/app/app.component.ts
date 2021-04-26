@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {SectionType} from './pages/intro/intro-page/page-sections.enum';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  public pageSection: SectionType = SectionType.INTRO;
   title = 'bitcoach-onepager';
 }
