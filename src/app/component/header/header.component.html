@@ -1,7 +1,7 @@
 <div [class.open]="isMenuOpened" class="header-wrapper">
 
   <div class="logo-menu-wrapper">
-    <mat-icon class="menu-icon" (click)="toggleMenu()">menu</mat-icon>
+    <mat-icon class="menu-icon" (click)="toggleMenu()">{{isMenuOpened ? "close" : "menu"}}</mat-icon>
     <img src="assets/image/bitcoach-logo-org.png"/>
   </div>
 

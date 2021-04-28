@@ -60,6 +60,10 @@ p, a, div {
 h1.title {
   font-size: 32px !important;
   margin: 50px 0;
+
+  span {
+    cursor: default;
+  }
 }
 
 h1.title-with-subtitle {

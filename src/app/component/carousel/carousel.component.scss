@@ -16,13 +16,16 @@ ngb-carousel .wrapper > img {
   height: 100%;
 }
 
+img {
+  width: 60%;
+}
+
 .text {
   position: absolute;
   z-index: 1;
   top: 30%;
   left: 10%;
   transition: all 3s;
-  height: 45%;
 
   .progresive {
 
@@ -40,7 +43,6 @@ ngb-carousel .wrapper > img {
     &.crypto {
       left: 25%;
       top: 30%;
-      height: 33%;
     }
 
     &.comunity {

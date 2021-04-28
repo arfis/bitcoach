@@ -1,5 +1,24 @@
 @import '../../../assets/lib/colors';
 
+
+.video-description-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 650px) {
+  .video-description-mobile {
+    display: block;
+  }
+
+  .video-description-desktop {
+    display: none;
+  }
+
+  .video-wrapper {
+    flex-direction: column;
+  }
+}
+
 .video-list-holder {
   overflow: hidden;
 }
@@ -60,10 +79,6 @@
     text-transform: uppercase;
   }
 
-  p {
-    color: white;
-  }
-
   .img-wrapper {
     //width: 100%;
     //height: 400px;
@@ -77,6 +92,10 @@
       opacity: 0.25;
     }
   }
+}
+
+p {
+  color: white;
 }
 
 .middle-part {

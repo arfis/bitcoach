@@ -93,9 +93,20 @@ section {
         }
 
         .primary {
+
+          flex-wrap: wrap;
+          z-index: 2;
           margin: 50px;
           justify-content: space-between;
           align-items: center;
+
+          @media only screen and (max-width: 600px) {
+            justify-content: center;
+
+            a {
+              margin: 10px;
+            }
+          }
 
           .icon {
             display: block;
@@ -154,8 +165,16 @@ section {
     .title {
       height: 45px;
 
+      @media only screen and (max-width: 650px) {
+        height: 35px;
+      }
+
       &.contributors {
         height: 70px;
+
+        @media only screen and (max-width: 650px) {
+          height: 55px;
+        }
       }
     }
   }
