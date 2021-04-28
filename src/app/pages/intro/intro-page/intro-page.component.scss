@@ -168,6 +168,13 @@ section {
     margin: 15px 0;
     flex-wrap: wrap;
 
+    .contributor {
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
     img {
       width: 80px;
       margin: 20px;

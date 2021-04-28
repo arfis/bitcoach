@@ -29,10 +29,25 @@ export class IntroPageComponent implements OnInit {
   ];
 
   contributors = [
-    'assets/image/contributors/crypto_kylin.png',
-    'assets/image/contributors/uniswap.png',
-    'assets/image/contributors/avax.png',
-    'assets/image/contributors/bsc.png'
+    {
+      image: 'assets/image/contributors/avax_ok.png',
+      url: 'https://www.avalabs.org/'
+    },
+    {image: 'assets/image/contributors/blockbank_ok.png', url: 'https://blockbank.ai/' },
+    {image: 'assets/image/contributors/chainlink_ok.png', url: 'https://chain.link/'},
+    {image: 'assets/image/contributors/goswapp_ok.png', url: 'https://goswapp.io/'},
+    {image: 'assets/image/contributors/kylin_ok.png', url: 'https://kylin.network/'},
+    {image: 'assets/image/contributors/mainframe_ok.png', url: 'https://hifi.finance/'},
+    {image: 'assets/image/contributors/origintrail_ok.png', url: 'https://origintrail.io/'},
+    {image: 'assets/image/contributors/orion_ok.png', url: 'https://www.orionprotocol.io/'},
+    {image: 'assets/image/contributors/polkadot_ok.png', url: 'https://polkadot.network/'},
+    {image: 'assets/image/contributors/quantstamp_ok.png', url: 'https://quantstamp.com/'},
+    {image: 'assets/image/contributors/ramp_ok.png', url: 'https://rampdefi.com/'},
+    {image: 'assets/image/contributors/sovryn_black_ok.png', url: 'https://www.sovryn.app/'},
+    {image: 'assets/image/contributors/tacen_ok.png', url: 'https://tacen.com/'},
+    {image: 'assets/image/contributors/tenset_ok.png', url: 'https://tenset.io/'},
+    {image: 'assets/image/contributors/uniswap_ok.png', url: 'https://uniswap.org/'},
+    {image: 'assets/image/contributors/wsb_ok.png', url: 'https://www.wsbdapp.com/'},
   ];
   partners = [
     'assets/image/partners/dao_maker.png'

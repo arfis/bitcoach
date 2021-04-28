@@ -1,0 +1,23 @@
+chainling > https://chain.link/
+polkadot > https://polkadot.network/
+uniswap > https://uniswap.org/
+sovryn > https://www.sovryn.app/
+avax > https://www.avalabs.org/
+ramp > https://rampdefi.com/
+blockbank > https://blockbank.ai/
+tacen > https://tacen.com/
+quantstamp > https://quantstamp.com/
+orion > https://www.orionprotocol.io/
+kylin > https://kylin.network/
+origin > https://origintrail.io/
+wsb > https://www.wsbdapp.com/
+mainframe > https://hifi.finance/
+tenset > https://tenset.io/
+smartswap > https://smartswap.exchange/
+goswap > https://goswapp.io/
+
+
+
+
+
+
