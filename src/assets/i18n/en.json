@@ -1,17 +1,19 @@
 {
   "VIDEO": {
-    "TITLE": "Why read when you <span class='font-gold'>can</span> listen"
+    "TITLE": "Better to <span class='font-gold'>see</span> something once than to hear about it a thousand times",
+    "TITLE_AUTHOR": "- Asian Proverb"
   },
   "BLOG" : {
     "TITLE": "Think before you speak. <span class='font-gold'>Read</span> before you think",
-    "AUTHOR": "- Fran Lebowitz"
+    "TITLE_AUTHOR": "- Fran Lebowitz"
   },
   "INTRO": {
     "ABOUT_US": {
       "JOIN_US": "Join us",
       "TITLE": "About us",
-      "MAIN_TITLE": "Become part of the new digital <span class='font-gold'>revolution</span> today!",
-      "SUB_TITLE": "Bitcoach is the most progressive Czech and Slovak community.",
+      "MAIN_TITLE": "Alone, we can do so little; <span class='font-gold'>together</span>, we can do so much",
+      "MAIN_TITLE_AUTHOR": "- Helen Keller",
+      "SUB_TITLE": "Become part of the new digital revolution today!",
       "CORE": "We are mainly focused on community activities, education and support of the new members. We are also advising, supporting and partnering with several successful crypto projects. On top of that, you can find beautiful crypto merch, NFTs, real coins and much more by joining our Telegram group.",
       "END": "The best thing is, it’s free and always will be. Join this crazy society here <a href='https://t.me/join_bitcoachCHAT'>https://t.me/join_bitcoachCHAT</a>",
       "EXTRA": "Etiam et orci vehicula, luctus lorem sed, accumsan sem. Morbi rhoncus condimentum libero nec pellentesque.\n        Aliquam pharetra tortor nec lorem imperdiet, sed."

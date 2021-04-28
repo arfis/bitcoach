@@ -62,14 +62,10 @@ h1.title {
   margin: 50px 0;
 }
 
-.title-with-subtitle {
+h1.title-with-subtitle {
   font-size: 32px !important;
-  margin-bottom: 15px;
-  margin-top: 50px;
-
-  > .sub-title {
-    margin-bottom: 50px !important;
-  }
+  margin-bottom: 15px !important;
+  margin-top: 50px !important;
 }
 
 .sub-title {
@@ -81,6 +77,10 @@ h1.title {
 .bold {
   font-family: $primary_font !important;
   font-weight: $bold !important;
+}
+
+button, a {
+  transition: all .3s;
 }
 
 .bc-btn {

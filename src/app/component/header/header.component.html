@@ -1,32 +1,34 @@
-<div class="header-wrapper">
-  <img src="assets/image/bitcoach-logo.svg"/>
+<div [class.open]="isMenuOpened" class="header-wrapper">
 
-  <div class="items">
-    <a (click)="navigateSection(SectionType.INTRO)">{{'HEADER.INFO' | translate}}</a>
-    <a (click)="navigateSection(SectionType.VIDEO)">{{'HEADER.VIDEO' | translate}}</a>
-    <a (click)="navigateSection(SectionType.BLOG)">{{'HEADER.BLOG' | translate}}</a>
-    <a (click)="navigateSection(SectionType.PARTNERS)">{{'HEADER.PARTNERS' | translate}}</a>
+  <div class="logo-menu-wrapper">
+    <mat-icon class="menu-icon" (click)="toggleMenu()">menu</mat-icon>
+    <img src="assets/image/bitcoach-logo-org.png"/>
+  </div>
+
+  <div class="basic-items">
+    <a routerLink="/" [fragment]="SectionType.INTRO">{{'HEADER.INFO' | translate}}</a>
+    <a routerLink="/" [fragment]="SectionType.VIDEO">{{'HEADER.VIDEO' | translate}}</a>
+    <a routerLink="/" [fragment]="SectionType.BLOG">{{'HEADER.BLOG' | translate}}</a>
+    <a routerLink="/" [fragment]="SectionType.PARTNERS">{{'HEADER.PARTNERS' | translate}}</a>
+    <a class="lang-selector" [matMenuTriggerFor]="menu">EN/SK</a>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="changeLang('sk')">SK</button>
+      <button mat-menu-item (click)="changeLang('en')">EN</button>
+    </mat-menu>
   </div>
 
   <div>
+    <!--    <button class="lang-selector" mat-button [matMenuTriggerFor]="menu">SK/EN</button>-->
+    <!--    <mat-menu #menu="matMenu">-->
+    <!--      <button mat-menu-item (click)="changeLang('sk')">SK</button>-->
+    <!--      <button mat-menu-item (click)="changeLang('en')">EN</button>-->
+    <!--    </mat-menu>-->
 
-    <button mat-button [matMenuTriggerFor]="menu">Menu</button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>Item 1</button>
-      <button mat-menu-item>Item 2</button>
-    </mat-menu>
+    <!--    <a class="lang-selector">SK/EN</a>-->
 
-<!--    <button class="lang-selector" mat-button [matMenuTriggerFor]="menu">SK/EN</button>-->
-<!--    <mat-menu #menu="matMenu">-->
-<!--      <button mat-menu-item (click)="changeLang('sk')">SK</button>-->
-<!--      <button mat-menu-item (click)="changeLang('en')">EN</button>-->
-<!--    </mat-menu>-->
-
-<!--    <a class="lang-selector">SK/EN</a>-->
-
-<!--    <mat-list role="list">-->
-<!--      <mat-list-item (click)="changeLang('sk')" role="listitem">SK</mat-list-item>-->
-<!--      <mat-list-item (click)="changeLang('en')" role="listitem">EN</mat-list-item>-->
-<!--    </mat-list>-->
+    <!--    <mat-list role="list">-->
+    <!--      <mat-list-item (click)="changeLang('sk')" role="listitem">SK</mat-list-item>-->
+    <!--      <mat-list-item (click)="changeLang('en')" role="listitem">EN</mat-list-item>-->
+    <!--    </mat-list>-->
   </div>
 </div>

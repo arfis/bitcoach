@@ -11,6 +11,7 @@ import {TranslateService} from '@ngx-translate/core';
 export class HeaderComponent implements OnInit {
 
   SectionType = SectionType;
+  public isMenuOpened = false;
   constructor(private sectionService: PageSectionService, private translateService: TranslateService) { }
 
   ngOnInit(): void {
@@ -22,5 +23,9 @@ export class HeaderComponent implements OnInit {
 
   public navigateSection(section: any): void {
     this.sectionService.sectionChange$.next(section);
+  }
+
+  public toggleMenu(): void {
+    this.isMenuOpened = !this.isMenuOpened;
   }
 }

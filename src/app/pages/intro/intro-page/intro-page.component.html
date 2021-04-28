@@ -1,6 +1,9 @@
 <section [id]="SectionType.INTRO" class="base">
+  <img class="fullscreen" src="../../../../assets/image/bitcoacher-logo.svg">
   <div class="font-blue bold main-title">
-    <h1 [innerHTML]="'INTRO.ABOUT_US.MAIN_TITLE' | translate"></h1>
+    <h1 class="title"
+        [matTooltip]="'INTRO.ABOUT_US.MAIN_TITLE_AUTHOR' | translate"
+    ><span [innerHTML]="'INTRO.ABOUT_US.MAIN_TITLE' | translate"></span></h1>
     <h3 class="sub-title">{{'INTRO.ABOUT_US.SUB_TITLE' | translate}}</h3>
   </div>
 
@@ -39,7 +42,10 @@
 </section>
 
 <section [id]="SectionType.VIDEO" class="video">
-  <h1 class="title font-white" [innerHTML]="'VIDEO.TITLE' | translate"></h1>
+  <h1 class="title font-white"
+      [matTooltip]="'VIDEO.TITLE_AUTHOR' | translate">
+    <span [innerHTML]="'VIDEO.TITLE' | translate"></span>
+  </h1>
   <app-video-carousel [videos]="youtubeItems$ | async"></app-video-carousel>
 </section>
 
@@ -50,39 +56,45 @@
 <!--</section>-->
 
 <section [id]="SectionType.BLOG" class="feed">
-  <h1 [innerHTML]="'BLOG.TITLE' | translate" class="title-with-subtitle font-blue"></h1>
-  <h3 class="sub-title">{{'BLOG.AUTHOR' | translate}}</h3>
+  <h1 class="title font-blue"
+      [matTooltip]="'BLOG.TITLE_AUTHOR' | translate">
+    <span [innerHTML]="'BLOG.TITLE' | translate"></span>
+  </h1>
+  <!--  <h3 class="sub-title">{{}}</h3>-->
   <app-feed-list [allItemsUrl]="'http://medium.com/bitcoach'"
                  [items]="mediumItems$ | async"></app-feed-list>
 </section>
 
 <section [id]="SectionType.PARTNERS" class="footer-part">
-  <h1 [innerHTML]="'BLOG.TITLE' | translate" class="title font-blue"></h1>
+  <!--  <h1 [innerHTML]="'BLOG.TITLE' | translate" class="title font-blue"></h1>-->
 
   <div class="sub-section">
-    <img class="title" src='assets/image/partners/partners.png'>
+    <img class="title partners" src='assets/image/partners/partners.png'>
     <div class="list">
       <img *ngFor="let partner of partners" [src]="partner"/>
     </div>
   </div>
 
   <div class="sub-section">
-    <img class="title" src='assets/image/contributors/contributors.png'>
+    <img class="title contributors" src='assets/image/contributors/contributors.png'>
     <div class="list">
       <img *ngFor="let contributor of contributors" [src]="contributor"/>
     </div>
   </div>
 
-<!--  <div class="sub-section">-->
-<!--    <div class="divider"></div>-->
-<!--    <h4>Podporujeme cez krypto mnozstvo veci. Napr pohyb a vzdelavannie.</h4>-->
-<!--    <div class="divider"></div>-->
-<!--  </div>-->
+  <!--  <div class="sub-section">-->
+  <!--    <div class="divider"></div>-->
+  <!--    <h4>Podporujeme cez krypto mnozstvo veci. Napr pohyb a vzdelavannie.</h4>-->
+  <!--    <div class="divider"></div>-->
+  <!--  </div>-->
 
   <div class="support">
-    <div class="content">
-      <span class="bold">SUPPORT US: <span class="address">0x858769b582f83097D19443C31714AfcC12DE863D</span></span>
-      <button class="bc-btn full">Bitcoach NFT</button>
+    <div class="content bold">
+      <span>SUPPORT US: <span class="bordered">0x858769b582f83097D19443C31714AfcC12DE863D</span></span>
+      <a class="bordered" href="https://rarible.com/bitcoach?tab=collectibles">
+        Bitcoach NFT
+<!--        <button class="bc-btn full inverse"></button>-->
+      </a>
     </div>
   </div>
 </section>

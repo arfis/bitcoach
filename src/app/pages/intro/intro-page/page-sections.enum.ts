@@ -1,3 +1,3 @@
 export enum SectionType {
-  INTRO, BLOG, VIDEO, PARTNERS
+  INTRO = 'intro', BLOG = 'blog', VIDEO = 'video', PARTNERS = 'partners'
 }
