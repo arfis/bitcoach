@@ -52,7 +52,10 @@ export class IntroPageComponent implements OnInit, AfterViewInit {
     {image: 'assets/image/contributors/tenset_ok.png', url: 'https://tenset.io/', widthOrientation: false},
   ];
   partners = [
-    'assets/image/partners/dao_maker.png'
+    {image: 'assets/image/partners/dao_maker.png', url: 'https://daomaker.com/', widthOrientation: false, height: 75},
+    {image: 'assets/image/partners/bcube.svg', url: 'https://www.b-cube.ai/', widthOrientation: false, height: 110},
+    {image: 'assets/image/partners/mandlore.png', url: 'https://www.mandalore.group/', widthOrientation: false},
+    {image: 'assets/image/partners/bsc_starter.png', url: 'https://bscstarter.finance/', widthOrientation: false}
   ];
   mediumItems$: Observable<any>;
   youtubeItems$: Observable<any>;

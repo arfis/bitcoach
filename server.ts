@@ -47,20 +47,16 @@ export function app(): express.Express {
   });
 
   server.get('/youtube', async (req, res) => {
-    let videos =  myCache.get( 'video' );
+    let videos = myCache.get('video');
 
     if (videos === undefined) {
       const API_KEY = 'AIzaSyCdgCwTbAfZ5NxPNFV2GuayKF7S9Kbod00';
       const maxResult = 100;
       const youtubeData = await axios.get(
         `https://www.googleapis.com/youtube/v3/playlistItems?key=${API_KEY}&part=snippet,contentDetails,id,status&maxResults=3&playlistId=PL4RE5QP-sB4KqW5F9406gKL7hjc5jnyKt&maxResults=${maxResult}`);
-        // `https://www.googleapis.com/youtube/v3/search?channelId=UCPjDQhKVe2YtPUI3PiWN82A&key=${API_KEY}&part=snippet,id&order=date&maxResults=${maxResult}`);
 
       videos = youtubeData.data;
       const success = myCache.set( 'video', videos, 1800000 );
-      console.log('downloading ');
-    } else {
-      console.log('from cache');
     }
 
     res.status(200).send(videos);

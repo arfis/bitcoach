@@ -18,6 +18,6 @@ export class CarouselComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    setTimeout(() => this.hasMoved = true, 200);
+    setTimeout(() => this.hasMoved = true, 20);
   }
 }

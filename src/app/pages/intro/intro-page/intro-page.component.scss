@@ -191,8 +191,17 @@ section {
     margin: 15px 0;
     flex-wrap: wrap;
 
-    .contributor {
+    &.heigher {
+      margin-top: 30px;
+    }
 
+    .partner {
+      img {
+        height: 55px;
+      }
+    }
+
+    .contributor, .partner {
       &:hover {
         transform: scale(1.1);
       }
@@ -223,6 +232,19 @@ section {
     display: flex;
     margin: 10px 0;
 
+    .content {
+      @media only screen and (max-width: 600px) {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+
+        button {
+          margin: 20px 0;
+        }
+      }
+    }
+
     .bordered {
       border: .4px solid $color-blue;
       padding: 2px;
@@ -248,6 +270,7 @@ section {
       width: 100%;
       left: 0;
       padding: 5px 20px;
+      padding-bottom: 30px !important;
 
       a {
         margin-left: 10px;
@@ -270,6 +293,12 @@ section {
           background: $color-background;
         }
       }
+    }
+
+    .est {
+      float: right;
+      font-weight: 100;
+      font-size: 13px;
     }
   }
 }
@@ -325,5 +354,5 @@ img.fullscreen {
   top: 0;
   left: 0;
   opacity: .03;
-  z-index: 1;
+  z-index: -1;
 }

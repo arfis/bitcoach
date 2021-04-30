@@ -4,8 +4,12 @@
       <img [class.autoWidth]="autoWidth" [src]="item.image">
       <h2 class="font-blue bold"><a [href]="item.link">{{item.title}}</a></h2>
       <p>{{item.description}}</p>
-      <button class="bc-btn empty" (click)="navigate(item.link)">{{'ACTION.READ_MORE' | translate}}</button>
+      <a class="a-button" [href]="item.link">
+        <button class="bc-btn empty">{{'ACTION.READ_MORE' | translate}}</button>
+      </a>
     </div>
   </div>
-  <button class="bc-btn full" (click)="navigate(allItemsUrl)">{{'ACTION.ALL_ARTICLES' | translate}}</button>
+  <a class="a-button" [href]="allItemsUrl">
+    <button class="bc-btn full">{{'ACTION.ALL_ARTICLES' | translate}}</button>
+  </a>
 </div>

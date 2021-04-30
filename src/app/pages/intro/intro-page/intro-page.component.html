@@ -71,14 +71,19 @@
   <div class="sub-section">
     <img class="title partners" src='assets/image/partners/partners.png'>
     <div class="list">
-      <img *ngFor="let partner of partners" [src]="partner"/>
+      <a class="partner" target="_blank" *ngFor="let partner of partners"
+         [href]="partner.url">
+        <img [class.widthOriented]="partner.widthOrientation"
+             [style.height.px]="partner.height"
+             [src]="partner.image"/>
+      </a>
     </div>
   </div>
 
   <div class="sub-section">
     <img class="title contributors" src='assets/image/contributors/contributors.png'>
-    <div class="list">
-      <a class="contributor" *ngFor="let contributor of contributors"
+    <div class="list heigher">
+      <a class="contributor" target="_blank" *ngFor="let contributor of contributors"
          [href]="contributor.url">
         <img [class.widthOriented]="contributor.widthOrientation" [src]="contributor.image"/>
       </a>
@@ -93,11 +98,13 @@
 
   <div class="support">
     <div class="content bold">
-      <span>SUPPORT US(ETH/BSC): <span class="bordered">0x858769b582f83097D19443C31714AfcC12DE863D</span></span>
-      <button class="bc-btn full" href="https://rarible.com/bitcoach?tab=collectibles">
-        Bitcoach NFT
-        <!--        <button class="bc-btn full inverse"></button>-->
-      </button>
+      <span>SUPPORT US (ETH/BSC): <span class="bordered">0x858769b582f83097D19443C31714AfcC12DE863D</span></span>
+      <a href="https://rarible.com/bitcoach?tab=collectibles">
+        <button class="bc-btn full">
+          Bitcoach NFT
+        </button>
+      </a>
+      <span class="est">Bitcoach Est. 2017</span>
     </div>
   </div>
 </section>

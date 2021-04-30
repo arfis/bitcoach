@@ -17,7 +17,7 @@ smartswap > https://smartswap.exchange/
 goswap > https://goswapp.io/
 
 
-
-
-
+- smooth scroller
+- ga analytics
+- https
 
