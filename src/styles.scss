@@ -20,6 +20,10 @@ $primary-fs: 16px;
 $font-md: 18px;
 $font-lg: 20px;
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   height: 100%;
   background-color: $color-background !important;
@@ -61,6 +65,10 @@ h1.title {
   font-size: 32px !important;
   margin: 50px 0;
 
+  @media only screen and (max-width: 850px) {
+    font-size: 26px !important;
+  }
+
   span {
     cursor: default;
   }
@@ -70,6 +78,10 @@ h1.title-with-subtitle {
   font-size: 32px !important;
   margin-bottom: 15px !important;
   margin-top: 50px !important;
+
+  @media only screen and (max-width: 850px) {
+    font-size: 26px !important;
+  }
 }
 
 .sub-title {
@@ -94,6 +106,7 @@ button, a {
   align-items: center;
   background: none;
   padding: 8px;
+  border-radius: 4px;
 
   &.empty {
     border: 1px solid $color-blue;

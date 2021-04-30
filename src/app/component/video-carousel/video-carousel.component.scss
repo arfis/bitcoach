@@ -69,6 +69,10 @@
     font-size: 32px;
     margin: 5px;
 
+    @media only screen and (max-width: 850px) {
+      font-size: 26px !important;
+    }
+
     mat-icon {
       cursor: pointer;
       color: white;

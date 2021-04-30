@@ -3,7 +3,7 @@
     "TITLE": "Better to <span class='font-gold'>see</span> something once than to hear about it a thousand times",
     "TITLE_AUTHOR": "- Asian Proverb"
   },
-  "BLOG" : {
+  "BLOG": {
     "TITLE": "Think before you speak. <span class='font-gold'>Read</span> before you think",
     "TITLE_AUTHOR": "- Fran Lebowitz"
   },
@@ -24,5 +24,9 @@
     "VIDEO": "Video",
     "BLOG": "Blog",
     "PARTNERS": "PARTNERS"
+  },
+  "ACTION": {
+    "READ_MORE": "Read more",
+    "ALL_ARTICLES": "See all articles"
   }
 }

@@ -6,11 +6,11 @@
   </div>
 
   <div class="basic-items">
-    <a routerLink="/" [fragment]="SectionType.INTRO">{{'HEADER.INFO' | translate}}</a>
-    <a routerLink="/" [fragment]="SectionType.VIDEO">{{'HEADER.VIDEO' | translate}}</a>
-    <a routerLink="/" [fragment]="SectionType.BLOG">{{'HEADER.BLOG' | translate}}</a>
-    <a routerLink="/" [fragment]="SectionType.PARTNERS">{{'HEADER.PARTNERS' | translate}}</a>
-    <a class="lang-selector" [matMenuTriggerFor]="menu">EN/SK</a>
+    <a class="bold"  [routerLink]="['./']" [fragment]="SectionType.INTRO">{{'HEADER.INFO' | translate}}</a>
+    <a class="bold"  [routerLink]="['./']" [fragment]="SectionType.VIDEO">{{'HEADER.VIDEO' | translate}}</a>
+    <a class="bold"  [routerLink]="['./']" [fragment]="SectionType.BLOG">{{'HEADER.BLOG' | translate}}</a>
+    <a class="bold"  [routerLink]="['./']" [fragment]="SectionType.PARTNERS">{{'HEADER.PARTNERS' | translate}}</a>
+    <a class="bold" class="lang-selector" [matMenuTriggerFor]="menu">EN/SK</a>
     <mat-menu #menu="matMenu">
       <button mat-menu-item (click)="changeLang('sk')">SK</button>
       <button mat-menu-item (click)="changeLang('en')">EN</button>

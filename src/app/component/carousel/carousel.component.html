@@ -5,11 +5,11 @@
                 [showNavigationIndicators]="true">>
     <ng-template *ngFor="let image of images" ngbSlide>
       <div class="wrapper">
-        <div class="text">
+        <div class="text" [class.move]="hasMoved">
           <img class="progresive" src="../../../assets/image/header/progressive.png">
-          <img class="move czech" src="../../../assets/image/header/czech.png">
-          <img class="move crypto" src="../../../assets/image/header/crypto.png">
-          <img class="move comunity" src="../../../assets/image/header/community.png">
+          <img class="czech" src="../../../assets/image/header/czech.png">
+          <img class="crypto" src="../../../assets/image/header/crypto.png">
+          <img class="community" src="../../../assets/image/header/community.png">
         </div>
         <img [src]="image" alt="Random first slide">
       </div>
