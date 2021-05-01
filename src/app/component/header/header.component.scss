@@ -7,6 +7,10 @@
   align-items: center;
   height: 68px;
 
+  &.open {
+    background: $color-blue;
+  }
+
   .logo-menu-wrapper {
     display: flex;
     justify-content: left;
