@@ -107,8 +107,10 @@ section {
           @media only screen and (max-width: 600px) {
             justify-content: center;
 
+            margin: 18px;
+
             a {
-              margin: 10px;
+              margin: 20px;
             }
           }
 
@@ -247,6 +249,10 @@ section {
           margin: 20px 0;
         }
       }
+
+      .nft {
+        display: inline;
+      }
     }
 
     .bordered {
@@ -277,7 +283,7 @@ section {
       padding-bottom: 30px !important;
 
       a {
-        margin-left: 10px;
+        //margin-left: 10px;
         text-decoration: none;
 
         &:hover {
@@ -300,9 +306,12 @@ section {
     }
 
     .est {
-      float: right;
+      width: 100%;
+      margin: 5px 0;
+      display: flex;
+      justify-content: center;
       font-weight: 100;
-      font-size: 13px;
+      font-size: 15px;
     }
   }
 }

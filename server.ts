@@ -55,7 +55,24 @@ export function app(): express.Express {
       const youtubeData = await axios.get(
         `https://www.googleapis.com/youtube/v3/playlistItems?key=${API_KEY}&part=snippet,contentDetails,id,status&maxResults=3&playlistId=PL4RE5QP-sB4KqW5F9406gKL7hjc5jnyKt&maxResults=${maxResult}`);
 
-      videos = youtubeData.data;
+      videos = youtubeData.data.items;
+      videos = (videos as any[]).map(video => {
+        const originalTitle = video.snippet.title;
+
+        const numberValue = originalTitle.match(/(#)\w+/)[0];
+        const episodeNumber = originalTitle.indexOf(numberValue);
+
+        const title = originalTitle.substring(0, episodeNumber - 1);
+        const subtitle = originalTitle.substring(episodeNumber + numberValue.length);
+        return {
+          ...video.snippet,
+          title,
+          subtitle,
+          episodeNumber,
+          videoId: video.id.videoId
+        };
+      });
+
       const success = myCache.set( 'video', videos, 1800000 );
     }
 

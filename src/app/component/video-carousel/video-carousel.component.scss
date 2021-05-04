@@ -8,6 +8,10 @@
 @media only screen and (max-width: 650px) {
   .video-description-mobile {
     display: block;
+
+    .sub-title {
+      height: 70px;
+    }
   }
 
   .video-description-desktop {

@@ -3,7 +3,7 @@ import {faTelegram, faFacebook, faDiscord, faYoutube, faInstagram, faMedium, faT
 import {MediumService} from '../../../service/medium.service';
 import {Observable} from 'rxjs';
 import {YoutubeService} from '../../../service/youtube.service';
-import {map, shareReplay} from 'rxjs/operators';
+import {map, shareReplay, tap} from 'rxjs/operators';
 import {ViewportScroller} from '@angular/common';
 import {SectionType} from './page-sections.enum';
 import {PageSectionService} from '../../../service/page-section.service';
@@ -42,7 +42,6 @@ export class IntroPageComponent implements OnInit, AfterViewInit {
     {image: 'assets/image/contributors/blockbank_ok.png', url: 'https://blockbank.ai/', widthOrientation: false},
     {image: 'assets/image/contributors/goswapp_ok.png', url: 'https://goswapp.io/', widthOrientation: false},
     {image: 'assets/image/contributors/kylin_ok.png', url: 'https://kylin.network/', widthOrientation: false},
-    {image: 'assets/image/contributors/mainframe_ok.png', url: 'https://hifi.finance/', widthOrientation: false},
     {image: 'assets/image/contributors/origintrail_ok.png', url: 'https://origintrail.io/', widthOrientation: false},
     {image: 'assets/image/contributors/orion_ok.png', url: 'https://www.orionprotocol.io/', widthOrientation: false},
     {image: 'assets/image/contributors/quantstamp_ok.png', url: 'https://quantstamp.com/', widthOrientation: false},
@@ -69,7 +68,7 @@ export class IntroPageComponent implements OnInit, AfterViewInit {
               private pageSectionService: PageSectionService,
               private route: ActivatedRoute) {
     this.mediumItems$ = this.mediumService.getItems();
-    this.youtubeItems$ = this.youtubeService.getItems().pipe(shareReplay());
+    this.youtubeItems$ = this.youtubeService.getItems().pipe(shareReplay(), tap(v => console.log(v)));
   }
 
   ngOnInit(): void {

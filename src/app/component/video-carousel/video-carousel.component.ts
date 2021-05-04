@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {NgbCarousel, NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
 import {DomSanitizer} from '@angular/platform-browser';
+import {DeviceService} from '../../service/device.service';
 
 @Component({
   selector: 'app-video-carousel',
@@ -11,6 +12,7 @@ export class VideoCarouselComponent implements OnInit {
 
   @ViewChild(NgbCarousel) carousel: NgbCarousel | undefined;
   @Input() videos: any[] = [];
+  @Input() seriesName = 'Crypto Coffe and Cake';
 
   public activeId: string = '';
   public videoUrl: any = null;
@@ -18,13 +20,15 @@ export class VideoCarouselComponent implements OnInit {
   public visibleVideoCount = 7;
   public rightPosition = 0;
   public videoWidth = 130;
+  public isMobileDevice = false;
 
-  constructor(config: NgbCarouselConfig, private sanitizer: DomSanitizer) {
+  constructor(config: NgbCarouselConfig, private sanitizer: DomSanitizer, private deviceService: DeviceService) {
     config.keyboard = true;
     config.pauseOnHover = true;
   }
 
   ngOnInit(): void {
+    this.isMobileDevice = this.deviceService.isMobileDevice();
     if (this.videos) {
       this.activeId = this.videos[0]?.id;
     }
