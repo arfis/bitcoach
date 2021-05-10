@@ -16,6 +16,7 @@ import * as xmlParser from 'xml2js';
 import axios from 'axios';
 import * as NodeCache from 'node-cache';
 import * as cors from 'cors';
+import * as fs from 'fs';
 
 // The Express app is exported so that it can be used by serverless Functions.
 export function app(): express.Express {
@@ -56,7 +57,7 @@ export function app(): express.Express {
         `https://www.googleapis.com/youtube/v3/playlistItems?key=${API_KEY}&part=snippet,contentDetails,id,status&maxResults=3&playlistId=PL4RE5QP-sB4KqW5F9406gKL7hjc5jnyKt&maxResults=${maxResult}`);
 
       videos = youtubeData.data.items;
-      videos = (videos as any[]).map(video => {
+      videos = (videos as any[]).map( (video, index) => {
         const originalTitle = video.snippet.title;
 
         const numberValue = originalTitle.match(/(#)\w+/)[0];
@@ -68,7 +69,7 @@ export function app(): express.Express {
           ...video.snippet,
           title,
           subtitle,
-          episodeNumber,
+          episodeNumber: index,
           videoId: video.id.videoId
         };
       });
@@ -128,6 +129,10 @@ export function app(): express.Express {
 }
 
 function run(): void {
+  const privateKey  = fs.readFileSync('cert/server.key', 'utf8');
+  const certificate = fs.readFileSync('cert/server.crt', 'utf8');
+  const credentials = {key: privateKey, cert: certificate};
+  const httpsServer = https.createServer(credentials, app);
   const port = process.env.PORT || 80;
 
   // Start up the Node server
@@ -135,6 +140,8 @@ function run(): void {
   server.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
+
+  httpsServer.listen(8443);
 }
 
 // Webpack will replace 'require' with '__webpack_require__'
