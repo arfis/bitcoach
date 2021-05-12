@@ -69,7 +69,7 @@ export function app(): express.Express {
           ...video.snippet,
           title,
           subtitle,
-          episodeNumber: index,
+          episodeNumber: index + 1,
           videoId: video.id.videoId
         };
       });
@@ -140,8 +140,6 @@ function run(): void {
   server.listen(port, () => {
     console.log(`Node Express server listening on http://localhost:${port}`);
   });
-
-  httpsServer.listen(8443);
 }
 
 // Webpack will replace 'require' with '__webpack_require__'
