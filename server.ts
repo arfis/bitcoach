@@ -129,10 +129,6 @@ export function app(): express.Express {
 }
 
 function run(): void {
-  const privateKey  = fs.readFileSync('cert/server.key', 'utf8');
-  const certificate = fs.readFileSync('cert/server.crt', 'utf8');
-  const credentials = {key: privateKey, cert: certificate};
-  const httpsServer = https.createServer(credentials, app);
   const port = process.env.PORT || 80;
 
   // Start up the Node server
