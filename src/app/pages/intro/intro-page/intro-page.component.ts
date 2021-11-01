@@ -68,7 +68,7 @@ export class IntroPageComponent implements OnInit, AfterViewInit {
               private pageSectionService: PageSectionService,
               private route: ActivatedRoute) {
     this.mediumItems$ = this.mediumService.getItems();
-    this.youtubeItems$ = this.youtubeService.getItems().pipe(shareReplay(), tap(v => console.log(v)));
+    this.youtubeItems$ = this.youtubeService.getItems().pipe(shareReplay());
   }
 
   ngOnInit(): void {

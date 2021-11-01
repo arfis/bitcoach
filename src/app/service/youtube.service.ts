@@ -20,7 +20,7 @@ export class YoutubeService {
       title: item.title,
       subtitle: item.subtitle,
       description: item.description,
-      image: item.thumbnails.standard.url,
+      image: item.thumbnails.standard?.url || item.thumbnails.default?.url,
       link: `http://youtube.com/${item.videoId}`
     }))));
   }
